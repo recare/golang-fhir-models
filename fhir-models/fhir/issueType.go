@@ -141,7 +141,7 @@ func (code IssueType) Code() string {
 	case IssueTypeInvalid:
 		return "invalid"
 	case IssueTypeStructure:
-		return "Structural Issue"
+		return "structure"
 	case IssueTypeRequired:
 		return "Required element missing"
 	case IssueTypeValue:
@@ -169,7 +169,7 @@ func (code IssueType) Code() string {
 	case IssueTypeMultipleMatches:
 		return "Multiple Matches"
 	case IssueTypeNotFound:
-		return "Not Found"
+		return "not-found"
 	case IssueTypeDeleted:
 		return "Deleted"
 	case IssueTypeTooLong:
