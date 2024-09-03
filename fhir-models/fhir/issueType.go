@@ -165,7 +165,7 @@ func (code IssueType) Code() string {
 	case IssueTypeNotSupported:
 		return "Content not supported"
 	case IssueTypeDuplicate:
-		return "Duplicate"
+		return "duplicate"
 	case IssueTypeMultipleMatches:
 		return "Multiple Matches"
 	case IssueTypeNotFound:
