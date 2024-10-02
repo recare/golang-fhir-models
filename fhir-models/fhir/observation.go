@@ -50,6 +50,7 @@ type Observation struct {
 	HasMember            []Reference                 `bson:"hasMember,omitempty" json:"hasMember,omitempty"`
 	DerivedFrom          []Reference                 `bson:"derivedFrom,omitempty" json:"derivedFrom,omitempty"`
 	Component            []ObservationComponent      `bson:"component,omitempty" json:"component,omitempty"`
+	ValueInteger         *integer                    `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
 	ValueQuantity        *Quantity                   `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
 	ValueRange           *Range                      `bson:"valueRange,omitempty" json:"valueRange,omitempty"`
 	ValueCodeableConcept *ValueCodeableConcept       `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
