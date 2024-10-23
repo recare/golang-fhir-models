@@ -25,7 +25,7 @@ type Resource struct {
 	Meta          	  *Meta   	`bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules 	  *string	`bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language      	  *string 	`bson:"language,omitempty" json:"language,omitempty"`
-	ResourceType      *ResourceType `bson:"resource_type,omitempty" json:"resource_type,omitempty"`
+	ResourceType      *ResourceType `bson:"resourceType,omitempty" json:"resourceType,omitempty"`
 }
 type OtherResource Resource
 
