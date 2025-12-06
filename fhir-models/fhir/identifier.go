@@ -25,20 +25,19 @@ type Identifier struct {
 	Type           *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	System         *string          `bson:"system,omitempty" json:"system,omitempty"`
 	Value          *string          `bson:"value,omitempty" json:"value,omitempty"`
+	ValueElement   *Element         `bson:"_value,omitempty" json:"_value,omitempty"`
 	ValueEncrypted *EncryptedField  `bson:"value_enrypted,omitempty" json:"value_enrypted,omitempty"`
 	Period         *Period          `bson:"period,omitempty" json:"period,omitempty"`
 	Assigner       *Reference       `bson:"assigner,omitempty" json:"assigner,omitempty"`
 }
 
 type IsipIdentifier struct {
-	Id             *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension      []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	Use            *IdentifierUse   `bson:"use,omitempty" json:"use,omitempty"`
-	Type           *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
-	System         *string          `bson:"system,omitempty" json:"system,omitempty"`
-	Value          interface{}     `bson:"value,omitempty" json:"value,omitempty"`
-	Period         *Period          `bson:"period,omitempty" json:"period,omitempty"`
-	Assigner       *Reference       `bson:"assigner,omitempty" json:"assigner,omitempty"`
+	Id        *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Extension []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
+	Use       *IdentifierUse   `bson:"use,omitempty" json:"use,omitempty"`
+	Type      *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
+	System    *string          `bson:"system,omitempty" json:"system,omitempty"`
+	Value     interface{}      `bson:"value,omitempty" json:"value,omitempty"`
+	Period    *Period          `bson:"period,omitempty" json:"period,omitempty"`
+	Assigner  *Reference       `bson:"assigner,omitempty" json:"assigner,omitempty"`
 }
-
-
