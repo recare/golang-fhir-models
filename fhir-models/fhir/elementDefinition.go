@@ -113,3 +113,8 @@ type ElementDefinitionMapping struct {
 	Map       string      `bson:"map" json:"map"`
 	Comment   *string     `bson:"comment,omitempty" json:"comment,omitempty"`
 }
+
+type Element struct {
+	Id        *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Extension []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
+}
