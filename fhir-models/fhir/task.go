@@ -73,6 +73,7 @@ type TaskInput struct {
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              CodeableConcept `bson:"type" json:"type"`
+	ValueReference    *Reference      `bson:"valueReference,omitempty" json:"valueReference,omitempty"`
 }
 type TaskOutput struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
