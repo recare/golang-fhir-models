@@ -73,3 +73,11 @@ type Extension struct {
 	ValueDosage              *Dosage              `bson:"valueDosage,omitempty" json:"valueDosage,omitempty"`
 	ValueMeta                *Meta                `bson:"valueMeta,omitempty" json:"valueMeta,omitempty"`
 }
+
+// RecareExtension is a custom extension type for _line extensions
+// ValueString can be either *string (for non-encrypted values like street name) or *EncryptedField (for encrypted values like house number)
+// The frontend's decryptPatcher will decrypt EncryptedField objects and convert them to strings
+type RecareExtension struct {
+	Url         string      `bson:"url" json:"url"`
+	ValueString interface{} `bson:"valueString,omitempty" json:"valueString,omitempty"`
+}
