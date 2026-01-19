@@ -39,12 +39,12 @@ type LineExtensionItem struct {
 
 type RecareAddress struct {
 	Id            *string             `bson:"id,omitempty" json:"id,omitempty"`
-	LineExtension []LineExtensionItem `bson:"_line,omitempty" json:"_line,omitempty"`
 	Use           *AddressUse         `bson:"use,omitempty" json:"use,omitempty"`
 	Type          *AddressType        `bson:"type,omitempty" json:"type,omitempty"`
 	Text          *string             `bson:"text,omitempty" json:"text,omitempty"`
 	HouseNumber   *EncryptedField     `bson:"houseNumber,omitempty" json:"houseNumber,omitempty"`
 	Line          []string            `bson:"line,omitempty" json:"line,omitempty"`
+	LineExtension []LineExtensionItem `bson:"_line,omitempty" json:"_line,omitempty"`
 	City          *string             `bson:"city,omitempty" json:"city,omitempty"`
 	District      *string             `bson:"district,omitempty" json:"district,omitempty"`
 	State         *string             `bson:"state,omitempty" json:"state,omitempty"`
