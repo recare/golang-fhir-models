@@ -80,3 +80,35 @@ func UnmarshalCondition(b []byte) (Condition, error) {
 	}
 	return condition, nil
 }
+
+type RecareCondition struct {
+	Id                 *string              `bson:"id,omitempty" json:"id,omitempty"`
+	Meta               *Meta                `bson:"meta,omitempty" json:"meta,omitempty"`
+	Code               *RecareConditionCode `bson:"code,omitempty" json:"code,omitempty"`
+	BodySite           []CodeableConcept    `bson:"bodySite,omitempty" json:"bodySite,omitempty"`
+	Subject            Reference            `bson:"subject" json:"subject"`
+	RecordedDate       *string              `bson:"recordedDate,omitempty" json:"recordedDate,omitempty"`
+	VerificationStatus *CodeableConcept     `bson:"verificationStatus,omitempty" json:"verificationStatus,omitempty"`
+}
+
+type RecareConditionCode struct {
+	Text *EncryptedField `bson:"text,omitempty" json:"text,omitempty"`
+}
+
+func (r RecareCondition) MarshalJSON() ([]byte, error) {
+	return json.Marshal(struct {
+		RecareCondition
+		ResourceType string `json:"resourceType"`
+	}{
+		RecareCondition: RecareCondition(r),
+		ResourceType:    "RecareCondition",
+	})
+}
+
+func UnmarshalRecareCondition(b []byte) (RecareCondition, error) {
+	var condition RecareCondition
+	if err := json.Unmarshal(b, &condition); err != nil {
+		return condition, err
+	}
+	return condition, nil
+}
