@@ -85,7 +85,6 @@ type RecareCondition struct {
 	Id                 *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Meta               *Meta                `bson:"meta,omitempty" json:"meta,omitempty"`
 	Code               *RecareConditionCode `bson:"code,omitempty" json:"code,omitempty"`
-	BodySite           []CodeableConcept    `bson:"bodySite,omitempty" json:"bodySite,omitempty"`
 	Subject            Reference            `bson:"subject" json:"subject"`
 	RecordedDate       *string              `bson:"recordedDate,omitempty" json:"recordedDate,omitempty"`
 	VerificationStatus *CodeableConcept     `bson:"verificationStatus,omitempty" json:"verificationStatus,omitempty"`
