@@ -94,13 +94,15 @@ type RecareConditionCode struct {
 	Text *EncryptedField `bson:"text,omitempty" json:"text,omitempty"`
 }
 
+type recareConditionAlias RecareCondition
+
 func (r RecareCondition) MarshalJSON() ([]byte, error) {
 	return json.Marshal(struct {
-		RecareCondition
+		recareConditionAlias
 		ResourceType string `json:"resourceType"`
 	}{
-		RecareCondition: RecareCondition(r),
-		ResourceType:    "RecareCondition",
+		recareConditionAlias: recareConditionAlias(r),
+		ResourceType:         "RecareCondition", // o "Condition" si lo alineáis con FHIR
 	})
 }
 
