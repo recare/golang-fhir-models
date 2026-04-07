@@ -36,8 +36,8 @@ type TimingRepeat struct {
 	DurationUnit *string      `bson:"durationUnit,omitempty" json:"durationUnit,omitempty"`
 	Frequency    *int         `bson:"frequency,omitempty" json:"frequency,omitempty"`
 	FrequencyMax *int         `bson:"frequencyMax,omitempty" json:"frequencyMax,omitempty"`
-	Period       *string      `bson:"period,omitempty" json:"period,omitempty"`
-	PeriodMax    *string      `bson:"periodMax,omitempty" json:"periodMax,omitempty"`
+	Period       *float32     `bson:"period,omitempty" json:"period,omitempty"`
+	PeriodMax    *float32     `bson:"periodMax,omitempty" json:"periodMax,omitempty"`
 	PeriodUnit   *string      `bson:"periodUnit,omitempty" json:"periodUnit,omitempty"`
 	DayOfWeek    []DaysOfWeek `bson:"dayOfWeek,omitempty" json:"dayOfWeek,omitempty"`
 	TimeOfDay    []string     `bson:"timeOfDay,omitempty" json:"timeOfDay,omitempty"`
