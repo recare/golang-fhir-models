@@ -53,12 +53,12 @@ type IsipRelatedPerson struct {
 	Identifier        []Identifier                 `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Active            *bool                        `bson:"active,omitempty" json:"active,omitempty"`
 	Patient           Reference                    `bson:"patient" json:"patient"`
-	Relationship      []CodeableConcept            `bson:"relationship,omitempty" json:"relationship,omitempty"`
+	Relationship      []RecareCodeableConcept      `bson:"relationship,omitempty" json:"relationship,omitempty"`
 	Name              []RecareHumanName            `bson:"name,omitempty" json:"name,omitempty"`
-	Telecom           []ContactPoint               `bson:"telecom,omitempty" json:"telecom,omitempty"`
+	Telecom           []RecareContactPoint         `bson:"telecom,omitempty" json:"telecom,omitempty"`
 	Gender            *AdministrativeGender        `bson:"gender,omitempty" json:"gender,omitempty"`
 	BirthDate         *string                      `bson:"birthDate,omitempty" json:"birthDate,omitempty"`
-	Address           []Address                    `bson:"address,omitempty" json:"address,omitempty"`
+	Address           []RecareEncryptedAddress     `bson:"address,omitempty" json:"address,omitempty"`
 	Photo             []Attachment                 `bson:"photo,omitempty" json:"photo,omitempty"`
 	Period            *Period                      `bson:"period,omitempty" json:"period,omitempty"`
 	Communication     []RelatedPersonCommunication `bson:"communication,omitempty" json:"communication,omitempty"`

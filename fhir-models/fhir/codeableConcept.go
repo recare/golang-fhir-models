@@ -24,3 +24,11 @@ type CodeableConcept struct {
 	Coding    []Coding    `bson:"coding,omitempty" json:"coding,omitempty"`
 	Text      *string     `bson:"text,omitempty" json:"text,omitempty"`
 }
+
+// RecareCodeableConcept is a CodeableConcept whose Text can be either *string or *EncryptedField.
+type RecareCodeableConcept struct {
+	Id        *string        `bson:"id,omitempty" json:"id,omitempty"`
+	Extension []Extension    `bson:"extension,omitempty" json:"extension,omitempty"`
+	Coding    []RecareCoding `bson:"coding,omitempty" json:"coding,omitempty"`
+	Text      interface{}    `bson:"text,omitempty" json:"text,omitempty"`
+}
