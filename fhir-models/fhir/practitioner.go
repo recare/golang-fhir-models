@@ -69,3 +69,27 @@ func UnmarshalPractitioner(b []byte) (Practitioner, error) {
 	}
 	return practitioner, nil
 }
+
+// IsipPractitioner is a Practitioner whose name, telecom and address are encrypted.
+type IsipPractitioner struct {
+	Id            *string                     `bson:"id,omitempty" json:"id,omitempty"`
+	Meta          *Meta                       `bson:"meta,omitempty" json:"meta,omitempty"`
+	Identifier    []Identifier                `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Active        *bool                       `bson:"active,omitempty" json:"active,omitempty"`
+	Name          []RecareHumanName           `bson:"name,omitempty" json:"name,omitempty"`
+	Telecom       []RecareContactPoint        `bson:"telecom,omitempty" json:"telecom,omitempty"`
+	Address       []RecareEncryptedAddress    `bson:"address,omitempty" json:"address,omitempty"`
+	Qualification []PractitionerQualification `bson:"qualification,omitempty" json:"qualification,omitempty"`
+}
+type OtherIsipPractitioner IsipPractitioner
+
+// MarshalJSON marshals the given IsipPractitioner as JSON into a byte slice
+func (r IsipPractitioner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(struct {
+		OtherIsipPractitioner
+		ResourceType string `json:"resourceType"`
+	}{
+		OtherIsipPractitioner: OtherIsipPractitioner(r),
+		ResourceType:          "Practitioner",
+	})
+}

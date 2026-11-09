@@ -27,3 +27,12 @@ type Coding struct {
 	Display      *string     `bson:"display,omitempty" json:"display,omitempty"`
 	UserSelected *bool       `bson:"userSelected,omitempty" json:"userSelected,omitempty"`
 }
+
+// RecareCoding is a Coding whose Code can be either *string or *EncryptedField.
+// An encrypted code is decrypted and mapped to the code system by the frontend.
+type RecareCoding struct {
+	Id      *string     `bson:"id,omitempty" json:"id,omitempty"`
+	System  *string     `bson:"system,omitempty" json:"system,omitempty"`
+	Code    interface{} `bson:"code,omitempty" json:"code,omitempty"`
+	Display *string     `bson:"display,omitempty" json:"display,omitempty"`
+}

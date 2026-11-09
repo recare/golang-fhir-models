@@ -52,3 +52,15 @@ type RecareAddress struct {
 	Country       *string             `bson:"country,omitempty" json:"country,omitempty"`
 	Period        *Period             `bson:"period,omitempty" json:"period,omitempty"`
 }
+
+// RecareEncryptedAddress is an address whose street, house number, city and postal code are all encrypted,
+// e.g. of a guardian or the general practitioner. Street and house number go in the _line extensions.
+type RecareEncryptedAddress struct {
+	Id            *string             `bson:"id,omitempty" json:"id,omitempty"`
+	LineExtension []LineExtensionItem `bson:"_line,omitempty" json:"_line,omitempty"`
+	Use           *AddressUse         `bson:"use,omitempty" json:"use,omitempty"`
+	Type          *AddressType        `bson:"type,omitempty" json:"type,omitempty"`
+	City          *EncryptedField     `bson:"city,omitempty" json:"city,omitempty"`
+	PostalCode    *EncryptedField     `bson:"postalCode,omitempty" json:"postalCode,omitempty"`
+	Country       *string             `bson:"country,omitempty" json:"country,omitempty"`
+}

@@ -45,7 +45,7 @@ type RecareHumanName struct {
 	FamilyExtension *IsipExtension  `bson:"_family,omitempty" json:"_family,omitempty"`
 	Given           *EncryptedField `bson:"given,omitempty" json:"given,omitempty"`
 	GivenExtension  []IsipExtension `bson:"_given,omitempty" json:"_given,omitempty"`
-	Prefix          []string        `bson:"prefix,omitempty" json:"prefix,omitempty"`
+	Prefix          *EncryptedField `bson:"prefix,omitempty" json:"prefix,omitempty"`
 	Suffix          []string        `bson:"suffix,omitempty" json:"suffix,omitempty"`
 	Period          *Period         `bson:"period,omitempty" json:"period,omitempty"`
 }

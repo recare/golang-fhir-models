@@ -27,3 +27,15 @@ type ContactPoint struct {
 	Rank      *int                `bson:"rank,omitempty" json:"rank,omitempty"`
 	Period    *Period             `bson:"period,omitempty" json:"period,omitempty"`
 }
+
+// RecareContactPoint is a ContactPoint whose Value can be either *string or *EncryptedField.
+// The frontend's decryptPatcher will decrypt EncryptedField objects and convert them to strings
+type RecareContactPoint struct {
+	Id        *string             `bson:"id,omitempty" json:"id,omitempty"`
+	Extension []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
+	System    *ContactPointSystem `bson:"system,omitempty" json:"system,omitempty"`
+	Value     interface{}         `bson:"value,omitempty" json:"value,omitempty"`
+	Use       *ContactPointUse    `bson:"use,omitempty" json:"use,omitempty"`
+	Rank      *int                `bson:"rank,omitempty" json:"rank,omitempty"`
+	Period    *Period             `bson:"period,omitempty" json:"period,omitempty"`
+}
